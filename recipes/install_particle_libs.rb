@@ -53,8 +53,9 @@ git "#{node['particle_cli']['dir']}/communication_lib" do
   group node['particle_cli']['group']
   repository node['particle_cli']['communication_lib']['repo_url']
   reference node['particle_cli']['communication_lib']['repo_ref']
-  retries 5
-  retry_delay 5
+  timeout 5
+  retries 2
+  retry_delay 2
   action :sync
 end
 
@@ -63,8 +64,9 @@ git "#{node['particle_cli']['dir']}/core_fw" do
   group node['particle_cli']['group']
   repository node['particle_cli']['core_fw']['repo_url']
   reference node['particle_cli']['core_fw']['repo_ref']
-  retries 5
-  retry_delay 5
+  timeout 5
+  retries 2
+  retry_delay 2
   action :sync
 end
 
@@ -83,7 +85,8 @@ git "#{node['particle_cli']['dir']}/core_common_lib" do
   group node['particle_cli']['group']
   repository node['particle_cli']['core_common_lib']['repo_url']
   reference node['particle_cli']['core_common_lib']['repo_ref']
-  retries 5
-  retry_delay 5
+  timeout 5
+  retries 2
+  retry_delay 2
   action :sync
 end

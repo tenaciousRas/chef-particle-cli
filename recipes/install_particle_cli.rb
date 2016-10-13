@@ -25,6 +25,7 @@ new_dirs.each do |dir|
   directory "#{dir}" do
     owner node['particle_cli']['user']
     group node['particle_cli']['group']
+    mode '0755'
     recursive true
     action :create
   end
@@ -33,6 +34,7 @@ end
 # download installer
 remote_file node['particle_cli']['download_path'] do
   source node['particle_cli']['source_url']
+  not_if { File.exists?(node['particle_cli']['download_path']) }
 end
 
 if platform_family?('windows')
@@ -60,6 +62,7 @@ execute 'install particle-cli from particle-cli-ng' do
 end
 
 # TODO: /Users/particle-ci/.particle/node-v5.4.1-darwin-x64 needs to be loaded into the path from the installer
+# can get same result with NVM cookbook
 link "/usr/local/bin/particle" do
   to "#{node['particle_cli']['home_dir']}/.particle/node_modules/particle-cli/bin/particle.js"
 end

@@ -21,7 +21,7 @@ default['particle_cli']['user'] = 'vagrant'
 default['particle_cli']['group'] = 'vagrant'
 
 # Most directories are relative to this
-default['particle_cli']['dir'] = "/home/#{node['particle_cli']['user']}/particle"
+default['particle_cli']['dir'] = "/home/#{node['particle_cli']['user']}/.particle"
 
 default['particle_cli']['communication_lib']['repo_url'] = "https://www.github.com/spark/core-communication-lib.git"
 default['particle_cli']['communication_lib']['repo_ref'] = "master"

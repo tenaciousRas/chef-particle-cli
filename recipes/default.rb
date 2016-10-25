@@ -16,6 +16,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###
+
+# install nvm
+include_recipe 'nvm'
+
+nvm_install '5.12'  do
+  from_source false
+  alias_as_default true
+  action :create
+end
+
 # install particle-cli via a pre-cooked binary package
 # install particle firmware and libs
 

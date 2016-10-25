@@ -17,6 +17,7 @@ Not tested on RPi.
 ### Cookbooks
 - apt -- needed for lib32c packages
 - git -- needed for particle firmware repo. and other libraries
+- nvm -- for NodeJS installation - TODO: parametrize so Node can be pre-installed
 
 ## Attributes
 Customize the attributes to suit site specific conventions and defaults.

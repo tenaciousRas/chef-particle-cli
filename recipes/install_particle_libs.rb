@@ -37,7 +37,7 @@ include_recipe('apt')
 package 'Install particle-cli Dependencies' do
   case node[:platform]
   when 'redhat', 'centos', 'debian'
-  when 'ubuntu'
+  when 'ubuntu', 'linuxmint'
     package_name 'libarchive-zip-perl'
   end
 end
